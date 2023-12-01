@@ -1,0 +1,12 @@
+:root{
+    --common:rgb(166,172,177);
+    --uncommon:rgb(66,153,10);
+    --rare:rgb(0,160,219);
+    --epic:rgb(160,67,207);
+    --legendary:rgb(212,116,51);
+    --common--outline:rgb(205,205,205);
+    --uncommon--outline:rgb(127,203,112);
+    --rare--outline:rgb(96,182,242);
+    --epic--outline:rgb(223,160,225);
+    --legendary--outline:rgb(255,194,167)
+}
