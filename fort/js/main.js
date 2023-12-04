@@ -10,6 +10,7 @@ async function getCosmetics(API) {
 
     const data = await response.json();
     const cosmeticsObject = data.data;
+    console.log(cosmeticsObject.slice(0, 100)); // remove
     cosmeticsObject.slice(0, 50).forEach((i) => {
       const card = document.createElement("div");
       card.classList.add("card");
@@ -19,6 +20,7 @@ async function getCosmetics(API) {
                 <p class="itemtype"> ${i.type.displayValue}</p>
                 <p class="rarity"> ${i.rarity.displayValue}</p>`;
       card.classList.add(`${i.rarity.displayValue}`);
+      card.classList.add(`${i.type.value}`);
       DOMSelectors.itemcontainer.appendChild(card);
     });
   } catch (error) {}

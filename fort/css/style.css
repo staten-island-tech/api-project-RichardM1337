@@ -3,6 +3,21 @@
   box-sizing: border-box;
 margin: 0;
     padding: 0;}
+.card{
+  border: 20px solid;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  border-radius: 50px;
+  margin:2rem;
+  padding: 20px;
+  transition:0.3s ease-in-out;
+  align-items:center;
+  margin-top: 1.5rem 0rem;
+  margin-bottom: 10rem;
+  width:20%;
+}
 .common{
   background-color:var(--common);
   box-shadow: 0 10px 20px 0 var(--common--outline);
@@ -28,21 +43,6 @@ margin: 0;
   background-color:var(--legendary);
   box-shadow: 0 10px 20px 0 var(--legendary--outline);
   border-color:var(--legendary--outline)
-}
-.card{
-  border: 20px solid;
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-      justify-content: center;
-      border-radius: 50px;
-      margin:2rem;
-      padding: 20px;
-      transition:0.3s ease-in-out;
-      align-items:center;
-      margin-top: 1.5rem 0rem;
-      margin-bottom: 10rem;
-      width:20%;
 }
 .itemcontainer{
   display:flex;
