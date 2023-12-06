@@ -1,4 +1,5 @@
 export const DOMSelectors = {
   itemcontainer: document.querySelector(".itemcontainer"),
-  itemSearch: document.querySelector(".itemSearch"),
+  itemSearchForm: document.querySelector(".form"),
+  itemSearchValue: document.querySelector(".itemSearch"),
 };

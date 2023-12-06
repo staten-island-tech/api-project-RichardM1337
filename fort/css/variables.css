@@ -8,5 +8,12 @@
     --uncommon--outline:rgb(127,203,112);
     --rare--outline:rgb(96,182,242);
     --epic--outline:rgb(223,160,225);
-    --legendary--outline:rgb(255,194,167)
+    --legendary--outline:rgb(255,194,167);
+    --lava:rgb(190,29,43);
+    --lava--outline:rgb(251,204,78);
+    --icon:rgb(60,225,225);
+    --icon--outline:rgb(20,138,145)
+
+
 }
+/* starwars, marvel, gaminglegends */

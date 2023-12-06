@@ -18,28 +18,38 @@ margin: 0;
   margin-bottom: 10rem;
   width:20%;
 }
+.icon{
+  background-color:var(--icon);
+  box-shadow: 0 10px 20px 0 var(--icon--outline);
+  border-color:var(--icon--outline)
+}
+.lava{
+  background-color:var(--lava);
+  box-shadow: 0 10px 20px 0 var(--lava--outline);
+  border-color:var(--lava--outline)
+}
 .common{
   background-color:var(--common);
   box-shadow: 0 10px 20px 0 var(--common--outline);
   border-color:var(--common--outline)
 }
-.Uncommon{
+.uncommon{
   background-color:var(--uncommon);
   box-shadow: 0 10px 20px 0 var(--uncommon--outline);
   border-color:var(--uncommon--outline)
 }
-.Rare{
+.rare{
   background-color:var(--rare);
   box-shadow: 0 10px 20px 0 var(--rare--outline);
   border-color:var(--rare--outline)
 }
 
-.Epic{
+.epic{
   background-color:var(--epic);
   box-shadow: 0 10px 20px 0 var(--epic--outline);
   border-color:var(--epic--outline)
 }
-.Legendary{
+.legendary{
   background-color:var(--legendary);
   box-shadow: 0 10px 20px 0 var(--legendary--outline);
   border-color:var(--legendary--outline)
