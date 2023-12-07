@@ -1,10 +1,8 @@
 import "../css/background.css" assert { type: "css" };
 import "../css/style.css" assert { type: "css" };
 
-let API = `https://fortnite-api.com/v2/cosmetics/br`;
 import { DOMSelectors } from "./domselectors";
 const form = DOMSelectors.itemSearchForm;
-const input = DOMSelectors.itemSearchValue.value;
 
 function cardCreator(arr) {
   arr.forEach((i) => {
@@ -20,30 +18,26 @@ function cardCreator(arr) {
     card.classList.add(`${i.type.value}`);
   });
 }
-async function cardFilter(arr, input) {
-  const newAPI = `https://fortnite-api.com/v2/cosmetics/br/search/all/$name=${input}`;
-  const newResponse = await fetch(newAPI);
-  const newData = await newResponse.json();
-  const newCosmeticsObject = newData.data;
-  cardCreator(newCosmeticsObject);
-}
 
-async function getCosmetics(API) {
+async function getCosmetics() {
   try {
-    const response = await fetch(API);
+    const response = await fetch(`https://fortnite-api.com/v2/cosmetics/br/`);
     const data = await response.json();
     const cosmeticsObject = data.data;
     console.log(cosmeticsObject.slice(0, 10)); // remove
     cardCreator(cosmeticsObject.slice(0, 100));
     form.addEventListener("submit", function (event) {
       event.preventDefault();
-      cardFilter(cosmeticsObject, input);
-      console.log(input);
     });
-  } catch (error) {}
+    if (data.status == 400) {
+      throw new Error(data.error);
+    }
+  } catch (error) {
+    DOMSelectors.h1.innerHTML = error;
+  }
 }
 
-getCosmetics(API);
+getCosmetics();
 
 // form add event listener change the API to /search/all/?name=${userinput}
-// what form
+// google search "fetch api with endpoint/parameters"

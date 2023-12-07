@@ -19,12 +19,12 @@ margin: 0;
   width:20%;
 }
 .icon{
-  background-color:var(--icon);
+  background:url('/icon.gif');
   box-shadow: 0 10px 20px 0 var(--icon--outline);
   border-color:var(--icon--outline)
 }
 .lava{
-  background-color:var(--lava);
+  background: url('/lava.gif');
   box-shadow: 0 10px 20px 0 var(--lava--outline);
   border-color:var(--lava--outline)
 }
@@ -54,6 +54,18 @@ margin: 0;
   box-shadow: 0 10px 20px 0 var(--legendary--outline);
   border-color:var(--legendary--outline)
 }
+.gaminglegends{
+  background: url('/gaminglegends.gif');
+  color:white
+}
+.marvel{
+  background:url('/marvel.gif');
+}
+.starwars{
+  background:url('/starwars.gif');
+  color:white
+}
+
 .itemcontainer{
   display:flex;
     flex-direction: row;
@@ -65,3 +77,9 @@ margin: 0;
   max-width: 50%;
   max-height:50%
 }
+.heading{
+  color:white;
+  text-align: center;
+}
+/* font == Burbank Big Condensed Black
+should rarity colors be in a separate css */
