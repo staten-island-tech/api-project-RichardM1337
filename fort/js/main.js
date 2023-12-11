@@ -8,10 +8,10 @@ function cardCreator(arr) {
     const card = document.createElement("div");
     card.classList.add("card");
     card.innerHTML = `
-                    <img src="${i.images.icon}" class="itemicon" alt="${i.name}">
-                    <h1 class="name">${i.name}</h1>
-                    <p class="itemtype"> ${i.type.displayValue}</p>
-                    <p class="rarity"> ${i.rarity.displayValue}</p>`;
+                      <img src="${i.images.icon}" class="itemicon" alt="${i.name}">
+                      <h1 class="name">${i.name}</h1>
+                      <p class="itemtype"> ${i.type.displayValue}</p>
+                      <p class="rarity"> ${i.rarity.displayValue}</p>`;
     DOMSelectors.itemcontainer.appendChild(card);
     card.classList.add(`${i.rarity.value}`);
     card.classList.add(`${i.type.value}`);
@@ -27,14 +27,20 @@ async function getCosmetics() {
     cardCreator(cosmeticsObject.slice(0, 100));
     form.addEventListener("submit", async function (event) {
       event.preventDefault();
-      const input = DOMSelectors.itemSearchValue.value; // works
+      const input = await DOMSelectors.itemSearchValue.value; // works
       const newResp = await fetch(
         `https://fortnite-api.com/v2/cosmetics/br/search/all/?name=${input}`
       );
       const data = await newResp.json();
       const searchObject = data.data;
+      DOMSelectors.itemcontainer.innerHTML = "";
+      if (data.status == 200) {
+        DOMSelectors.h1.innerHTML = "Fortnite API";
+        cardCreator(searchObject);
+      } else {
+        DOMSelectors.h1.innerHTML = data.error; // my current workaround for errors not being parsed thru search
+      }
       console.log(data);
-      if (data.error) cardCreator(searchObject);
     });
     if (data.status != 200) {
       throw new Error(data.error);
@@ -43,6 +49,7 @@ async function getCosmetics() {
     DOMSelectors.h1.innerHTML = error;
   }
 }
+
 getCosmetics();
 
 // form add event listener change the API to /search/all/?name=${userinput}
