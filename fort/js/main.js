@@ -16,7 +16,7 @@ function cardCreator(arr) {
     card.classList.add(`${i.rarity.value}`);
     card.classList.add(`${i.type.value}`);
   });
-}
+} /*
 async function getCosmetics() {
   try {
     const response = await fetch(
@@ -45,6 +45,28 @@ async function getCosmetics() {
     if (data.status != 200) {
       throw new Error(data.error);
     }
+  } catch (error) {
+    DOMSelectors.h1.innerHTML = error;
+  }
+} */
+async function getCosmetics() {
+  try {
+    const response = await fetch(
+      `https://fortnite-api.com/v2/cosmetics/br/new`
+    );
+    const data = await response.json();
+    const cosmeticsObject = data.data.items;
+    cardCreator(cosmeticsObject.slice(0, 100));
+    const input = await DOMSelectors.itemSearchValue.value; // works
+    const newResp = await fetch(
+      `https://fortnite-api.com/v2/cosmetics/br/search/all/?name=${input}`
+    );
+    const newdata = await newResp.json();
+    const searchObject = newdata.data;
+    form.addEventListener("submit", async function (event) {
+      event.preventDefault;
+      cardCreator(searchObject);
+    });
   } catch (error) {
     DOMSelectors.h1.innerHTML = error;
   }
