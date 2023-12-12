@@ -49,6 +49,7 @@ async function getCosmetics() {
     DOMSelectors.h1.innerHTML = error;
   }
 } */
+
 async function getCosmetics() {
   try {
     const response = await fetch(
@@ -57,22 +58,46 @@ async function getCosmetics() {
     const data = await response.json();
     const cosmeticsObject = data.data.items;
     cardCreator(cosmeticsObject.slice(0, 100));
-    const input = await DOMSelectors.itemSearchValue.value; // works
-    const newResp = await fetch(
-      `https://fortnite-api.com/v2/cosmetics/br/search/all/?name=${input}`
-    );
-    const newdata = await newResp.json();
-    const searchObject = newdata.data;
-    form.addEventListener("submit", async function (event) {
-      event.preventDefault;
-      cardCreator(searchObject);
-    });
+    if (data.status != 200) {
+      throw new Error(data.error);
+    }
   } catch (error) {
     DOMSelectors.h1.innerHTML = error;
   }
 }
+async function cosmeticsSearch(input) {
+  try {
+    const response = await fetch(
+      `https://fortnite-api.com/v2/cosmetics/br/search/all/?name=${input}`
+    );
+    const data = await response.json();
+    const cosmeticsObject = data.data;
+    DOMSelectors.h1.innerHTML = "Fortnite API";
+    DOMSelectors.itemcontainer.innerHTML = "";
+    console.log(cosmeticsObject); // remove
+    cardCreator(cosmeticsObject);
+    if (data.status != 200) {
+      throw new Error(data.error);
+    }
+  } catch (error) {
+    console.log(error);
+    DOMSelectors.h1.innerHTML =
+      "Your item wasn't found. Maybe you spelt it wrong?";
+  }
+}
 
 getCosmetics();
-
-// form add event listener change the API to /search/all/?name=${userinput}
-// google search "fetch api with endpoint/parameters"
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+  const input = DOMSelectors.itemSearchValue.value;
+  cosmeticsSearch(input);
+});
+DOMSelectors.resetbutton.addEventListener("click", function (event) {
+  event.preventDefault();
+  DOMSelectors.h1.innerHTML = "Fortnite API";
+  DOMSelectors.itemcontainer.innerHTML = "";
+  getCosmetics();
+});
+// the api tends to be very specific at times
+// differentiate betyween 200, 400, and 404 erros
+// make it look good pls
