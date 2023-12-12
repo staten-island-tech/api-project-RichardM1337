@@ -100,4 +100,4 @@ DOMSelectors.resetbutton.addEventListener("click", function (event) {
 });
 // the api tends to be very specific at times
 // differentiate betyween 200, 400, and 404 erros
-// make it look good pls
+// make it look good pls (possibly use radial-gradient)
