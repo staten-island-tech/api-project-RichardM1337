@@ -11,58 +11,36 @@ function cardCreator(arr) {
                       <img src="${i.images.icon}" class="itemicon" alt="${i.name}">
                       <h1 class="name">${i.name}</h1>
                       <p class="itemtype"> ${i.type.displayValue}</p>
-                      <p class="rarity"> ${i.rarity.displayValue}</p>`;
+                      <p class="rarity"> ${i.rarity.id}</p>`;
     DOMSelectors.itemcontainer.appendChild(card);
-    card.classList.add(`${i.rarity.value}`);
+    card.classList.add(`${i.rarity.id.toLowerCase()}`);
     card.classList.add(`${i.type.value}`);
   });
-} /*
-async function getCosmetics() {
-  try {
-    const response = await fetch(
-      `https://fortnite-api.com/v2/cosmetics/br/new`
-    );
-    const data = await response.json();
-    const cosmeticsObject = data.data.items;
-    cardCreator(cosmeticsObject.slice(0, 100));
-    form.addEventListener("submit", async function (event) {
-      event.preventDefault();
-      const input = await DOMSelectors.itemSearchValue.value; // works
-      const newResp = await fetch(
-        `https://fortnite-api.com/v2/cosmetics/br/search/all/?name=${input}`
-      );
-      const data = await newResp.json();
-      const searchObject = data.data;
-      DOMSelectors.itemcontainer.innerHTML = "";
-      if (data.status == 200) {
-        DOMSelectors.h1.innerHTML = "Fortnite API";
-        cardCreator(searchObject);
-      } else {
-        DOMSelectors.h1.innerHTML = data.error; // my current workaround for errors not being parsed thru search
-      }
-      console.log(data);
-    });
-    if (data.status != 200) {
-      throw new Error(data.error);
-    }
-  } catch (error) {
-    DOMSelectors.h1.innerHTML = error;
-  }
-} */
+}
 
-async function getCosmetics() {
+async function cosmeticsSearch(input) {
   try {
     const response = await fetch(
-      `https://fortnite-api.com/v2/cosmetics/br/new`
+      `https://fortniteapi.io/v2/items/list?lang=en`,
+      {
+        headers: {
+          Authorization: "2742ddbe-5e58be8f-c2bf24a2-98f1c48e",
+        },
+      }
     );
     const data = await response.json();
-    const cosmeticsObject = data.data.items;
-    cardCreator(cosmeticsObject.slice(0, 100));
+    const cosmeticsObject = data.data;
+    DOMSelectors.h1.innerHTML = "Fortnite API";
+    DOMSelectors.itemcontainer.innerHTML = "";
+    console.log(cosmeticsObject); // remove
+    cardCreator(cosmeticsObject);
     if (data.status != 200) {
       throw new Error(data.error);
     }
   } catch (error) {
-    DOMSelectors.h1.innerHTML = error;
+    console.log(error);
+    DOMSelectors.h1.innerHTML =
+      "Your item wasn't found. Maybe you spelt it wrong?";
   }
 }
 async function cosmeticsSearch(input) {
@@ -98,6 +76,3 @@ DOMSelectors.resetbutton.addEventListener("click", function (event) {
   DOMSelectors.itemcontainer.innerHTML = "";
   getCosmetics();
 });
-// the api tends to be very specific at times
-// differentiate betyween 200, 400, and 404 erros
-// make it look good pls (possibly use radial-gradient)
