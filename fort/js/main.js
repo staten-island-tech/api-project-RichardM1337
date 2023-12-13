@@ -16,39 +16,7 @@ function cardCreator(arr) {
     card.classList.add(`${i.rarity.value}`);
     card.classList.add(`${i.type.value}`);
   });
-} /*
-async function getCosmetics() {
-  try {
-    const response = await fetch(
-      `https://fortnite-api.com/v2/cosmetics/br/new`
-    );
-    const data = await response.json();
-    const cosmeticsObject = data.data.items;
-    cardCreator(cosmeticsObject.slice(0, 100));
-    form.addEventListener("submit", async function (event) {
-      event.preventDefault();
-      const input = await DOMSelectors.itemSearchValue.value; // works
-      const newResp = await fetch(
-        `https://fortnite-api.com/v2/cosmetics/br/search/all/?name=${input}`
-      );
-      const data = await newResp.json();
-      const searchObject = data.data;
-      DOMSelectors.itemcontainer.innerHTML = "";
-      if (data.status == 200) {
-        DOMSelectors.h1.innerHTML = "Fortnite API";
-        cardCreator(searchObject);
-      } else {
-        DOMSelectors.h1.innerHTML = data.error; // my current workaround for errors not being parsed thru search
-      }
-      console.log(data);
-    });
-    if (data.status != 200) {
-      throw new Error(data.error);
-    }
-  } catch (error) {
-    DOMSelectors.h1.innerHTML = error;
-  }
-} */
+}
 
 async function getCosmetics() {
   try {
@@ -83,6 +51,7 @@ async function cosmeticsSearch(input) {
     console.log(error);
     DOMSelectors.h1.innerHTML =
       "Your item wasn't found. Maybe you spelt it wrong?";
+    DOMSelectors.h2.innerHTML = "";
   }
 }
 

@@ -85,10 +85,10 @@ margin: 0;
   position:sticky;
   top:0;
   width:100%;
-  height:12px;
   text-align:center;
   backdrop-filter: blur(10px);
-  height:30px;
+  height:40px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
 }
-/* font == Burbank Big Condensed Black
-should rarity colors be in a separate css */

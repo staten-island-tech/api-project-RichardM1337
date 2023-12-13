@@ -4,4 +4,5 @@ export const DOMSelectors = {
   itemSearchValue: document.querySelector(".name"),
   h1: document.querySelector(".heading"),
   resetbutton: document.querySelector(".resetbutton"),
+  h2: document.querySelector("#subhead"),
 };
