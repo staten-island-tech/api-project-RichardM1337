@@ -10,15 +10,15 @@ function cardCreator(arr) {
     card.innerHTML = `
                       <img src="${i.images.icon}" class="itemicon" alt="${i.name}">
                       <h1 class="name">${i.name}</h1>
-                      <p class="itemtype"> ${i.type.displayValue}</p>
+                    <p class="itemtype"> ${i.type.name}</p>
                       <p class="rarity"> ${i.rarity.id}</p>`;
     DOMSelectors.itemcontainer.appendChild(card);
     card.classList.add(`${i.rarity.id.toLowerCase()}`);
-    card.classList.add(`${i.type.value}`);
+    card.classList.add(`${i.type.id}`);
   });
 }
 
-async function cosmeticsSearch(input) {
+async function getCosmetics() {
   try {
     const response = await fetch(
       `https://fortniteapi.io/v2/items/list?lang=en`,
@@ -29,18 +29,14 @@ async function cosmeticsSearch(input) {
       }
     );
     const data = await response.json();
-    const cosmeticsObject = data.data;
-    DOMSelectors.h1.innerHTML = "Fortnite API";
-    DOMSelectors.itemcontainer.innerHTML = "";
-    console.log(cosmeticsObject); // remove
-    cardCreator(cosmeticsObject);
+    const cosmeticsObject = data.items;
+    console.log(data);
+    cardCreator(cosmeticsObject.slice(0, 100));
     if (data.status != 200) {
       throw new Error(data.error);
     }
   } catch (error) {
-    console.log(error);
-    DOMSelectors.h1.innerHTML =
-      "Your item wasn't found. Maybe you spelt it wrong?";
+    DOMSelectors.h1.innerHTML = error;
   }
 }
 async function cosmeticsSearch(input) {
