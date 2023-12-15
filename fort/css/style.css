@@ -1,6 +1,13 @@
+
 @import url("variables.css");
+@font-face{
+  font-family:'burbank';
+  src:url('../dist/assets/Burbank.otf');
+  font-weight:normal;
+}
 *{
   box-sizing: border-box;
+  font-family:burbank;
 margin: 0;
     padding: 0;}
 .card{
@@ -17,7 +24,53 @@ margin: 0;
   margin-top: 1.5rem 0rem;
   margin-bottom: 10rem;
   width:20%;
+  transition: ease-in-out 0.3s;
 }
+.card:hover{
+  transform:translate(0,-20px) /* fix with top bar */
+}
+.itemcontainer{
+  display:flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+.itemicon{
+  max-width: 50%;
+  max-height:50%
+}
+.heading{
+  color:white;
+  text-align: center;
+  font-weight:300;
+  font-size:50px;
+  top:20px;
+}
+.header--search{
+  position:sticky;
+  top:0;
+  width:100%;
+  text-align:center;
+  backdrop-filter: blur(10px);
+  height:50px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  border-radius:50px;
+}
+.itemtype,.rarity{
+  font-size:30px
+}
+
+.name{
+  margin-left:50px;
+  margin-right:50px;
+}
+
+
+
+/* removing this causes the border colors to stop working */
 .icon{
   background:url('/icon.gif');
   box-shadow: 0 10px 20px 0 var(--icon--outline);
@@ -64,31 +117,4 @@ margin: 0;
 .starwars{
   background:url('/starwars.gif');
   color:white
-}
-
-.itemcontainer{
-  display:flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-
-}
-.itemicon{
-  max-width: 50%;
-  max-height:50%
-}
-.heading{
-  color:white;
-  text-align: center;
-}
-.header--search{
-  position:sticky;
-  top:0;
-  width:100%;
-  text-align:center;
-  backdrop-filter: blur(10px);
-  height:40px;
-  display:flex;
-  justify-content: center;
-  align-items: center;
 }

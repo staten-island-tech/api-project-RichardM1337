@@ -8,10 +8,10 @@ function cardCreator(arr) {
     const card = document.createElement("div");
     card.classList.add("card");
     card.innerHTML = `
-                      <img src="${i.images.icon}" class="itemicon" alt="${i.name}">
-                      <h1 class="name">${i.name}</h1>
-                      <p class="itemtype"> ${i.type.displayValue}</p>
-                      <p class="rarity"> ${i.rarity.displayValue}</p>`;
+      <img src="${i.images.icon}" class="itemicon" alt="${i.name}">
+      <h1 class="name">${i.name}</h1>
+      <p class="itemtype"> ${i.type.displayValue}</p>
+      <p class="rarity"> ${i.rarity.displayValue}</p>`;
     DOMSelectors.itemcontainer.appendChild(card);
     card.classList.add(`${i.rarity.value}`);
     card.id = `${i.type.value}`;
@@ -68,13 +68,7 @@ DOMSelectors.resetbutton.addEventListener("click", function (event) {
   getCosmetics();
 });
 
-/* for (i = 1; i++; i < 8000) {
-  GamepadButton.addEventListener("click", function (event, arr) {
-    event.preventDefault();
-    cardCreator();
-  });
-} */
-
 // the api tends to be very specific at times
 // differentiate betyween 200, 400, and 404 erros
-// make it look good pls (possibly use radial-gradient)
+// errohandling
+// nextpage
