@@ -36,10 +36,7 @@ margin: 0;
     flex-wrap: wrap;
 
 }
-.itemicon{
-  max-width: 50%;
-  max-height:50%
-}
+
 .heading{
   color:white;
   text-align: center;
