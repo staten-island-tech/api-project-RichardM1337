@@ -72,3 +72,4 @@ DOMSelectors.resetbutton.addEventListener("click", function (event) {
 // differentiate betyween 200, 400, and 404 erros
 // errohandling
 // nextpage
+//hover, dropdown?
