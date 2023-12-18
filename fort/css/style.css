@@ -11,7 +11,6 @@
 margin: 0;
     padding: 0;}
 .card{
-  border: 20px solid;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -26,9 +25,8 @@ margin: 0;
   width:20%;
   transition: ease-in-out 0.3s;
 }
-.card:hover{
-  transform:translate(0,-20px) /* fix with top bar */
-}
+
+
 .itemcontainer{
   display:flex;
     flex-direction: row;
@@ -43,9 +41,6 @@ margin: 0;
 .heading{
   color:white;
   text-align: center;
-  font-weight:300;
-  font-size:50px;
-  top:20px;
 }
 .header--search{
   position:sticky;
@@ -53,68 +48,8 @@ margin: 0;
   width:100%;
   text-align:center;
   backdrop-filter: blur(10px);
-  height:50px;
+  height:40px;
   display:flex;
   justify-content: center;
   align-items: center;
-  border-radius:50px;
-}
-.itemtype,.rarity{
-  font-size:30px
-}
-
-.name{
-  margin-left:50px;
-  margin-right:50px;
-}
-
-
-
-/* removing this causes the border colors to stop working */
-.icon{
-  background:url('/icon.gif');
-  box-shadow: 0 10px 20px 0 var(--icon--outline);
-  border-color:var(--icon--outline)
-}
-.lava{
-  background: url('/lava.gif');
-  box-shadow: 0 10px 20px 0 var(--lava--outline);
-  border-color:var(--lava--outline)
-}
-.common{
-  background-color:var(--common);
-  box-shadow: 0 10px 20px 0 var(--common--outline);
-  border-color:var(--common--outline)
-}
-.uncommon{
-  background-color:var(--uncommon);
-  box-shadow: 0 10px 20px 0 var(--uncommon--outline);
-  border-color:var(--uncommon--outline)
-}
-.rare{
-  background-color:var(--rare);
-  box-shadow: 0 10px 20px 0 var(--rare--outline);
-  border-color:var(--rare--outline)
-}
-
-.epic{
-  background-color:var(--epic);
-  box-shadow: 0 10px 20px 0 var(--epic--outline);
-  border-color:var(--epic--outline)
-}
-.legendary{
-  background-color:var(--legendary);
-  box-shadow: 0 10px 20px 0 var(--legendary--outline);
-  border-color:var(--legendary--outline)
-}
-.gaminglegends{
-  background: url('/gaminglegends.gif');
-  color:white
-}
-.marvel{
-  background:url('/marvel.gif');
-}
-.starwars{
-  background:url('/starwars.gif');
-  color:white
 }

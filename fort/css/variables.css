@@ -13,3 +13,61 @@
 
 
 }
+
+.icon{
+    background:url('/icon.gif');
+    border: 20px solid;
+    box-shadow: 0 10px 20px 0 var(--icon--outline);
+    border-color:var(--icon--outline)
+  }
+  .lava{
+    background: url('/lava.gif');
+    border: 20px solid;
+    box-shadow: 0 10px 20px 0 var(--lava--outline);
+    border-color:var(--lava--outline)
+  }
+  .common{
+    background-color:var(--common);
+    border: 20px solid;
+    box-shadow: 0 10px 20px 0 var(--common--outline);
+    border-color:var(--common--outline)
+  }
+  .uncommon{
+    background-color:var(--uncommon);
+    border: 20px solid;
+    box-shadow: 0 10px 20px 0 var(--uncommon--outline);
+    border-color:var(--uncommon--outline)
+  }
+  .rare{
+    background-color:var(--rare);
+    border: 20px solid;
+    box-shadow: 0 10px 20px 0 var(--rare--outline);
+    border-color:var(--rare--outline)
+  }
+
+  .epic{
+    background-color:var(--epic);
+    border: 20px solid;
+    box-shadow: 0 10px 20px 0 var(--epic--outline);
+    border-color:var(--epic--outline)
+  }
+  .legendary{
+    background-color:var(--legendary);
+    border: 20px solid;
+    box-shadow: 0 10px 20px 0 var(--legendary--outline);
+    border-color:var(--legendary--outline)
+  }
+  .gaminglegends{
+    border: 20px solid;
+    background: url('/gaminglegends.gif');
+    color:white
+  }
+  .marvel{
+    border: 20px solid;
+    background:url('/marvel.gif');
+  }
+  .starwars{
+    border: 20px solid;
+    background:url('/starwars.gif');
+    color:white
+  }
