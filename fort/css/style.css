@@ -2,7 +2,7 @@
 @import url("variables.css");
 @font-face{
   font-family:'burbank';
-  src:url('../dist/assets/Burbank.otf');
+  src:url('../Burbank-uGmKF_CA.otf');
   font-weight:normal;
 }
 *{
@@ -34,10 +34,7 @@ margin: 0;
     flex-wrap: wrap;
 
 }
-.itemicon{
-  max-width: 50%;
-  max-height:50%
-}
+
 .heading{
   color:white;
   text-align: center;
