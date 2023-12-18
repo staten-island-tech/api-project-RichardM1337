@@ -9,7 +9,7 @@ function cardCreator(arr) {
     card.classList.add("card");
     card.innerHTML = `
       <img src="${i.images.icon}" class="itemicon" alt="${i.name}">
-      <h1 class="name">${i.name}</h1>
+      <h1 class="itemname">${i.name}</h1>
       <p class="itemtype"> ${i.type.displayValue}</p>
       <p class="rarity"> ${i.rarity.displayValue}</p>`;
     DOMSelectors.itemcontainer.appendChild(card);
