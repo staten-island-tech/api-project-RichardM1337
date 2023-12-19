@@ -5,4 +5,6 @@ export const DOMSelectors = {
   h1: document.querySelector(".heading"),
   resetbutton: document.querySelector(".resetbutton"),
   h2: document.querySelector("#subhead"),
+  dropdown: document.querySelector(".dropdown"),
+  card: document.querySelector(".card"),
 };

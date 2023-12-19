@@ -11,7 +11,10 @@ function cardCreator(arr) {
       <img src="${i.images.icon}" class="itemicon" alt="${i.name}">
       <h1 class="itemname">${i.name}</h1>
       <p class="itemtype"> ${i.type.displayValue}</p>
-      <p class="rarity"> ${i.rarity.displayValue}</p>`;
+      <p class="rarity"> ${i.rarity.displayValue}</p>
+      <div class="dropdownMenu">
+        <p class="description">${i.description}</p>
+      </div>`;
     DOMSelectors.itemcontainer.appendChild(card);
     card.classList.add(`${i.rarity.value}`);
     card.id = `${i.type.value}`;
@@ -73,3 +76,4 @@ DOMSelectors.resetbutton.addEventListener("click", function (event) {
 // errohandling
 // nextpage
 //hover, dropdown?
+// fix text
