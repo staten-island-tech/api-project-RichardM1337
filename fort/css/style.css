@@ -55,6 +55,7 @@
 }
 .itemname{
   font-size: 2rem;
+  white-space: nowrap; /* WARNING, VERY UGLY */
 
 }
 .rarity,.itemtype{
