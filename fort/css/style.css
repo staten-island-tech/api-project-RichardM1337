@@ -105,6 +105,9 @@ details[open] summary {
 /* media queries */
 @media screen and (max-width:900px) {
   *{font-weight: 100;}
+  .itemname{
+    white-space:wrap;
+  }
   .card {
       width: 60%;
   }
