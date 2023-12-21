@@ -10,10 +10,15 @@ function cardCreator(arr) {
     card.innerHTML = `
       <img src="${i.images.icon}" class="itemicon" alt="${i.name}">
       <h1 class="itemname">${i.name}</h1>
-      <p class="itemtype"> ${i.type.displayValue}</p>
-      <p class="rarity"> ${i.rarity.displayValue}</p>
       <div class="dropdownMenu">
-        <p class="description">${i.description}</p>
+        <details>
+          <summary>
+            Information
+          </summary>
+          <p class="description">"${i.description}"</p>
+          <p class="itemtyperarity"> ${i.rarity.displayValue} ${i.type.displayValue}</p>
+          <p class="partOfSet">${i.set.text}</p>
+          <p class="introduced">${i.introduction.text}</p>
       </div>`;
     DOMSelectors.itemcontainer.appendChild(card);
     card.classList.add(`${i.rarity.value}`);
@@ -33,7 +38,11 @@ async function getCosmetics() {
       throw new Error(data.error);
     }
   } catch (error) {
-    DOMSelectors.h1.innerHTML = error;
+    if (error.includes("TypeError")) {
+      console.log("false typeerror");
+    } else {
+      DOMSelectors.h1.innerHTML = error;
+    }
   }
 }
 async function cosmeticsSearch(input) {
@@ -71,9 +80,5 @@ DOMSelectors.resetbutton.addEventListener("click", function (event) {
   getCosmetics();
 });
 
-// the api tends to be very specific at times
-// differentiate betyween 200, 400, and 404 erros
-// errohandling
-// nextpage
-//hover, dropdown?
-// fix text
+// hover, dropdown, nextpage?
+// fix .text in a nonbruteforce way, moving anim glitch
