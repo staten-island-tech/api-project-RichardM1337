@@ -8,7 +8,7 @@ function cardCreator(arr) {
     const card = document.createElement("div");
     card.classList.add("card");
     card.innerHTML = `
-      <img src="${i.images.icon}" class="itemicon" alt="${i.name}">
+      <img src="${i.images.icon}" class="itemicon">
       <h1 class="itemname">${i.name}</h1>
       <div class="dropdownMenu">
         <details>
@@ -33,12 +33,13 @@ async function getCosmetics() {
     );
     const data = await response.json();
     const cosmeticsObject = data.data.items;
-    cardCreator(cosmeticsObject.slice(0, 100));
+    cardCreator(cosmeticsObject);
     if (data.status != 200) {
       throw new Error(data.error);
     }
   } catch (error) {
     if (error.includes("TypeError")) {
+      // identifies i.introduction etc as html element instead of iterating attempt
       console.log("false typeerror");
     } else {
       DOMSelectors.h1.innerHTML = error;
@@ -54,7 +55,6 @@ async function cosmeticsSearch(input) {
     const cosmeticsObject = data.data;
     DOMSelectors.h1.innerHTML = "Fortnite API";
     DOMSelectors.itemcontainer.innerHTML = "";
-    console.log(cosmeticsObject); // remove
     cardCreator(cosmeticsObject);
     if (data.status != 200) {
       throw new Error(data.error);
@@ -77,8 +77,10 @@ DOMSelectors.resetbutton.addEventListener("click", function (event) {
   event.preventDefault();
   DOMSelectors.h1.innerHTML = "Fortnite API";
   DOMSelectors.itemcontainer.innerHTML = "";
+  DOMSelectors.itemSearchValue.value = "";
+  DOMSelectors.h2.innerHTML = "Now showing newest items";
   getCosmetics();
 });
 
 // hover, dropdown, nextpage?
-// fix .text in a nonbruteforce way, moving anim glitch
+// fix .text in a nonbruteforce way
