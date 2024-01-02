@@ -9,7 +9,8 @@
   box-sizing: border-box;
   font-family:burbank;
   margin: 0;
-    padding: 0;}
+    padding: 0;
+  letter-spacing: 0.5px;}
 .card{
   display: flex;
   flex-direction: column;
@@ -88,7 +89,7 @@
   padding:5%;
 }
 details {
-  border-bottom:1.5px solid #000;
+  border-bottom:2px solid #000;
 }
 
 summary {
@@ -100,8 +101,8 @@ details[open] {
 }
 
 details[open] summary {
-  border-bottom:1.5px solid #000;
-  margin-bottom: 0.5em;
+  border-bottom:2px solid #000;
+  margin-bottom: 0.5rem;
 }
 
 /* media queries */

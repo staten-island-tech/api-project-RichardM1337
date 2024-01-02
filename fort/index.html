@@ -3,23 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>Fortnite API</title>
+    <link rel="icon" type="image/x-icon" href="https://upload.wikimedia.org/wikipedia/commons/7/7c/Fortnite_F_lettermark_logo.png">
   </head>
   <body>
+    <header>
       <div class="header--search">
-        <h1 class="heading">Fortnite API</h1>
+        <h1 tabindex="0" class="heading">Fortnite API</h1>
         <form action="" class="form">
           <label class="formLabel" for="name">Search:</label>
           <input type="text" name="name"  class="name" required="" placeholder="item.."/>
           <input type="submit" name="submit" value="Search" class="searchButton" required=""/>
           <button class="resetbutton">Reset</button>
         </form>
-      <!--<button class="next">Next Page</button> -->
-  </div>
+      </div>
+    </header>
   <div class="subhead">
-    <h2 class="heading" id="subhead">Now showing newest items</h2>
+    <h2 tabindex="0" class="heading" id="subhead">Now showing newest items</h2>
   </div>
     <div class="itemcontainer"></div>
     <script type="module" src="./js/main.js"></script>
   </body>
 </html>
+
+<!-- footer if necessary -->
