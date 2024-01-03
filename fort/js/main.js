@@ -8,17 +8,17 @@ function cardCreator(arr) {
     const card = document.createElement("div");
     card.classList.add("card");
     card.innerHTML = `
-      <img src="${i.images.icon}" class="itemicon" alt="Picture of ${i.images.icon}">
+      <img src="${i.images.icon}" class="itemicon" alt="Picture of ${i.name}">
       <h2 tabindex="0" class="itemname">${i.name}</h1>
       <div class="dropdownMenu">
         <details>
           <summary>
             Information
           </summary>
-          <p tabindex="2" class="description">"${i.description}"</p>
-          <p tabindex="3" class="itemtyperarity"> ${i.rarity.displayValue} ${i.type.displayValue}</p>
-          <p tabindex="4" class="partOfSet">${i.set.text}</p>
-          <p tabindex="5" class="introduced">${i.introduction.text}</p>
+          <p tabindex="0" class="description">Description: "${i.description}"</p>
+          <p tabindex="0" class="itemtyperarity"> ${i.rarity.displayValue} ${i.type.displayValue}</p>
+          <p tabindex="0" class="partOfSet">${i.set.text}</p>
+          <p tabindex="0" class="introduced">${i.introduction.text}</p>
       </div>`;
     DOMSelectors.itemcontainer.appendChild(card);
     card.classList.add(`${i.rarity.value}`);
