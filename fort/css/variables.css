@@ -52,7 +52,6 @@
     border: 20px solid;
     box-shadow: 0 10px 20px 0 var(--epic--outline);
     border-color:var(--epic--outline);
-    color:#F5F5F5;
   }
   .legendary{
     background-color:var(--legendary);
@@ -63,7 +62,7 @@
   .gaminglegends{
     border: 20px solid;
     background: url('/gaminglegends.gif');
-    color:#ffff;
+    color:#F5F5F5;
     background-size:cover;
   }
   .marvel{
@@ -74,6 +73,6 @@
   .starwars{
     border: 20px solid;
     background:url('/starwars.gif');
-    color:#ffff;
+    color:#F5F5F5;
     background-size:cover; /* covers entire card whether closed or open, makes it a little cleaner but sacrifices smoothness */
   }
