@@ -1,15 +1,19 @@
 :root{
-    --common:rgb(166,172,177);
+    --common:#a6acb1;
     --uncommon:#4DB60C;
     --rare:#00a0db;
     --epic:#AE50D3;
     --legendary:#d47433;
-    --common--outline:rgb(205,205,205);
-    --uncommon--outline:rgb(127,203,112);
-    --rare--outline:rgb(96,182,242);
-    --epic--outline:rgb(223,160,225);
-    --legendary--outline:rgb(255,194,167);
-    --icon--outline:rgb(20,138,145);
+    --common--outline:#cdcdcd;
+    --uncommon--outline:#7fcb70;
+    --rare--outline:#60b6f2;
+    --epic--outline:#dfa0e1;
+    --legendary--outline:#ffc2a7;
+    --icon--outline:#148a91;
+    --lava--outline:#c4311c;
+    --starwars--outline:#1a3f75;
+    --marvel--outline:#e02b24;
+    --gaminglegends--outline:#4345d6;
 
 
 }
@@ -64,15 +68,21 @@
     background: url('/gaminglegends.gif');
     color:#F5F5F5;
     background-size:cover;
+    box-shadow: 0 10px 20px 0 var(--gaminglegends--outline);
+    border-color:var(--gaminglegends--outline);
   }
   .marvel{
     border: 20px solid;
     background:url('/marvel.gif');
-    background-size:cover
+    background-size:cover;
+    box-shadow: 0 10px 20px 0 var(--marvel--outline);
+    border-color:var(--marvel--outline);
   }
   .starwars{
     border: 20px solid;
     background:url('/starwars.gif');
     color:#F5F5F5;
     background-size:cover; /* covers entire card whether closed or open, makes it a little cleaner but sacrifices smoothness */
+    box-shadow: 0 10px 20px 0 var(--starwars--outline);
+    border-color:var(--starwars--outline);
   }

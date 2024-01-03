@@ -83,4 +83,4 @@ DOMSelectors.resetbutton.addEventListener("click", function (event) {
 });
 
 // hover, dropdown, nextpage?
-// fix .text in a nonbruteforce way
+// fix .text in a nonbruteforce way, separate outline color for gifs?
