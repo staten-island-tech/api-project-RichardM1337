@@ -1,9 +1,9 @@
 :root{
     --common:rgb(166,172,177);
-    --uncommon:rgb(66,153,10);
-    --rare:rgb(0,160,219);
-    --epic:rgb(160,67,207);
-    --legendary:rgb(212,116,51);
+    --uncommon:#4DB60C;
+    --rare:#00a0db;
+    --epic:#AE50D3;
+    --legendary:#d47433;
     --common--outline:rgb(205,205,205);
     --uncommon--outline:rgb(127,203,112);
     --rare--outline:rgb(96,182,242);
@@ -13,7 +13,7 @@
 
 
 }
-
+/* richard you ae a poopyhead */
 .icon{
     background:url('/icon.gif');
     border: 20px solid;
@@ -52,7 +52,6 @@
     border: 20px solid;
     box-shadow: 0 10px 20px 0 var(--epic--outline);
     border-color:var(--epic--outline);
-    color:#F5F5F5;
   }
   .legendary{
     background-color:var(--legendary);
