@@ -11,6 +11,14 @@
   margin: 0;
     padding: 0;
   letter-spacing: 0.5px;}
+
+  .itemcontainer{
+    display:flex;
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
+
+  }
 .card{
   display: flex;
   flex-direction: column;
@@ -18,41 +26,34 @@
   justify-content: center;
   border-radius: 40px;
   margin:2rem;
-  margin-bottom:10%;
   top:-10px;
   padding: 1.5rem;
   transition:0.3s ease-in-out;
   align-items:center;
   width:20%;
-  height:150%
-
+  height:150%;
 }
 
-
-.itemcontainer{
-  display:flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-
-}
 
 .heading{
   color:white;
   text-align: center;
   font-size: 50px;
 }
-.header--search{
+header{
   position:sticky;
   top:0;
   width:100%;
+  z-index:99;
+}
+.header--search{
   text-align:center;
   backdrop-filter: blur(10px);
-  height:20%;
+  height:10%;
   display:flex;
   justify-content: center;
   align-items: center;
-  z-index: 1;
+  z-index: 99;
 }
 .itemname{
   font-size: 2rem;
@@ -101,7 +102,20 @@ details[open] summary {
   border-bottom:2px solid #000;
   margin-bottom: 0.5rem;
 }
-
+details[open] summary ~ *{ /* tilde  selects sibling elements appearing after the referred to element. in this case it refers to the summary heading and all the text inside*/
+  animation: sweep .5s ease-in-out;
+}
+details[open] .card{
+  animation: expand .5s ease-in-out;
+}
+@keyframes sweep {
+  0%    {opacity: 0; margin-bottom: -10px}
+  100%  {opacity: 1; margin-bottom: 0px}
+}
+@keyframes expand {
+  0% {height:150%}
+  100%{height:700%}
+}
 /* media queries */
 @media screen and (max-width:900px) {
   *{font-weight: 100;}
