@@ -106,6 +106,8 @@ details[open] summary, details[open] {
 details[open] summary ~ *{ /* tilde  selects sibling elements appearing after the referred to element. in this case it refers to the summary heading and all the text inside*/
 }
 
+/* details summary animations currently do not support reverting */
+
 /* media queries */
 @media screen and (max-width:900px) {
   *{font-weight: 100;}
