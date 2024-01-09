@@ -84,38 +84,28 @@ header{
   animation: growDown 300ms ease-in-out backwards
 }
 .description,.itemtyperarity,.partOfSet,.introduced{
-  padding:5%;
+  padding:3%;
 }
 details {
   border-bottom:2px solid #000;
-}
-
-summary {
+  overflow: hidden; /* Hide the rest of the content */
+  padding:5px;
   font-size:20px;
 }
 
-details[open] {
-  font-size:20px;
-}
 
-details[open] summary {
+details summary{
+  transition: margin 250ms ease-in-out;
+}
+details[open] summary, details[open] {
   border-bottom:2px solid #000;
-  margin-bottom: 0.5rem;
+  margin-bottom: .25rem; /* for more prominent move */
+  transition: margin 250ms ease-in-out;
+  font-size:20px;
 }
 details[open] summary ~ *{ /* tilde  selects sibling elements appearing after the referred to element. in this case it refers to the summary heading and all the text inside*/
-  animation: sweep .5s ease-in-out;
 }
-details[open] .card{
-  animation: expand .5s ease-in-out;
-}
-@keyframes sweep {
-  0%    {opacity: 0; margin-bottom: -10px}
-  100%  {opacity: 1; margin-bottom: 0px}
-}
-@keyframes expand {
-  0% {height:150%}
-  100%{height:700%}
-}
+
 /* media queries */
 @media screen and (max-width:900px) {
   *{font-weight: 100;}
