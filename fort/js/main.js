@@ -29,7 +29,7 @@ function cardCreator(arr) {
 async function getCosmetics() {
   try {
     const response = await fetch(
-      `https://fortnite-api.com/v2/cosmetics/br/new`
+      `https://fortnite-api.com/v2/cosmetics/new`
     );
     const data = await response.json();
     const cosmeticsObject = data.data.items;
